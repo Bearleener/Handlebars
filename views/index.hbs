@@ -11,14 +11,27 @@
 
 <body>
 
-    <div class="container">
-        <h1>Aqmpoints</h1>
-        <ul class="list-group">
-        {{#each point}}
-        <li class="list-group-item">{{this}}</li>
-        {{/each}}
-        </ul>
-    </div>
+   <h1>Filter by user</h1>
+    <ul class="button-group">
+      <a class="btn btn-outline-primary" href="/">
+        All
+      </a>
+      {{#each users}}
+        <a class="btn btn-outline-primary" href="/{{id}}">
+          {{email}}
+        </a>
+      {{/each}}
+    </ul>
+
+    <h1>Aqmpoints</h1>
+    <ul class="list-group">
+      {{#each aqmpoints}}        
+        <li class="list-group-item">
+          <strong>NOX: </strong> {{aqm.noxevent}}
+          <strong>Time: </strong> {{gps.system_time}}
+        </li>
+      {{/each}}
+    </ul>
 </body>
 
 </html>
